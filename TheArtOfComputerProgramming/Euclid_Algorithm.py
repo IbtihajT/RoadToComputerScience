@@ -10,15 +10,17 @@
 
 def euclid(m, n):
 
-    if m < n:  # Ensure m >= n
-        m, n = n, m  # If not, swap
+    if m > 0 and n > 0:  # Ensure that both numbers are positive integers
 
-    r = m % n  # Find the remainder of m divided by n
+        if m < n:  # Ensure m >= n
+            m, n = n, m  # If not, swap
 
-    if r == 0:  # If remainder is 0 Return number
-        return n
-    else:
-        return(euclid(n, r))  # Reduce. Update m by n and n by r
+        r = m % n  # Find the remainder of m divided by n
+
+        if r == 0:  # If remainder is 0 Return number
+            return n
+        else:
+            return(euclid(n, r))  # Reduce. Update m by n and n by r
 
 
 print(euclid(119, 544))
